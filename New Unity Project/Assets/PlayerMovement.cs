@@ -13,8 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 destination;
     Vector3 nextposition;
+    Vector3 direction;
 
-    float speed = 1.0f;
+    float speed = 5.0f;
+    bool move;
+    float range = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,29 +36,57 @@ public class PlayerMovement : MonoBehaviour
         {
             nextposition = Vector3.forward;
             currentdirection = up;
+            move = true;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             nextposition = Vector3.left;
             currentdirection = left;
+            move = true;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             nextposition = Vector3.back;
             currentdirection = down;
+            move = true;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
             nextposition = Vector3.right;
             currentdirection = right;
+            move = true;
         }
 
-        if (Vector3.Distance(destination, transform.position) <= 0.1f)
+        if (Vector3.Distance(destination, transform.position) <= 0.00001f)
         {
-            destination = transform.position + nextposition;
+            if (move)
+            {
+                if (blocked())
+                {
+                    destination = transform.position + nextposition;
+                    direction = nextposition;
+                    move = false;
+                }
+            }
         }
+    }
+
+    bool blocked()
+    {
+        Ray checker = new Ray(transform.position + new Vector3(0, 0.5f, 0), transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(checker, out hit, range))
+        {
+            if (hit.collider.tag == "Obstacle")
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
