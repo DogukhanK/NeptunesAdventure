@@ -15,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 nextposition;
     Vector3 direction;
 
-    float speed = 5.0f;
+    float speed = 1.0f;
     bool move;
     float range = 1.0f;
+
+    Animator walk;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
         destination = transform.position;
         nextposition = Vector3.forward;
         currentdirection = up;
+
+        walk = gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -32,10 +37,13 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
+        walk.SetBool("walk", false);
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             nextposition = Vector3.forward;
             currentdirection = up;
+            walk.SetBool("walk", true);
             move = true;
         }
 
@@ -43,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             nextposition = Vector3.left;
             currentdirection = left;
+            walk.SetBool("walk", true);
             move = true;
         }
 
@@ -50,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             nextposition = Vector3.back;
             currentdirection = down;
+            walk.SetBool("walk", true);
             move = true;
         }
 
@@ -57,11 +67,13 @@ public class PlayerMovement : MonoBehaviour
         {
             nextposition = Vector3.right;
             currentdirection = right;
+            walk.SetBool("walk", true);
             move = true;
         }
 
         if (Vector3.Distance(destination, transform.position) <= 0.00001f)
         {
+            transform.localEulerAngles = currentdirection;
             if (move)
             {
                 if (blocked())
