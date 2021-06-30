@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     Vector3 up = Vector3.zero;
     Vector3 down = new Vector3(0, 180, 0);
@@ -18,12 +18,22 @@ public class PlayerMovement : MonoBehaviour
     float speed = 1.0f;
     bool move;
     float range = 1.0f;
+    bool isPlaying;
+
+    public int MaxHealth;
+    public int CurrentHealth;
 
     Animator walk;
+
+    public HealthBar bar;
 
     // Start is called before the first frame update
     void Start()
     {
+        CurrentHealth = MaxHealth;
+
+        bar.SetMaxHealth(MaxHealth);
+
         destination = transform.position;
         nextposition = Vector3.forward;
         currentdirection = up;
@@ -35,6 +45,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(movement());
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Damage(10);
+        }
+    }
+
+    IEnumerator movement()
+    {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
         walk.SetBool("walk", false);
@@ -45,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             currentdirection = up;
             walk.SetBool("walk", true);
             move = true;
+            isPlaying = true;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -53,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
             currentdirection = left;
             walk.SetBool("walk", true);
             move = true;
+            isPlaying = true;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -61,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
             currentdirection = down;
             walk.SetBool("walk", true);
             move = true;
+            isPlaying = true;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -69,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
             currentdirection = right;
             walk.SetBool("walk", true);
             move = true;
+            isPlaying = true;
         }
 
         if (Vector3.Distance(destination, transform.position) <= 0.00001f)
@@ -83,6 +107,11 @@ public class PlayerMovement : MonoBehaviour
                     move = false;
                 }
             }
+        }
+        if (isPlaying == true)
+        {
+            move = false;
+            yield return new WaitForSeconds(5.5f);
         }
     }
 
@@ -100,5 +129,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return true;
+    }
+
+    void Damage(int damage)
+    {
+        CurrentHealth -= damage;
+
+        bar.SetHealth(CurrentHealth);
     }
 }
