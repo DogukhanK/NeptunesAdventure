@@ -11,8 +11,7 @@ public class FloorTrigger : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            floor.GetComponent<Renderer>().material.color = Color.green;
-            SceneManager.LoadScene(0);
+            Debug.Log("entered");
         }
     }
 }
