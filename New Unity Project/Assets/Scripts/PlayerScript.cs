@@ -14,9 +14,10 @@ public class PlayerScript : MonoBehaviour
     Vector3 destination;
     Vector3 nextposition;
     Vector3 direction;
+    Vector3 position;
 
     float speed = 1.0f;
-    bool move;
+    public bool move;
     float range = 1.0f;
     bool isPlaying;
 
@@ -26,6 +27,8 @@ public class PlayerScript : MonoBehaviour
     Animator walk;
 
     public HealthBar bar;
+
+    GameObject floors;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +40,11 @@ public class PlayerScript : MonoBehaviour
         destination = transform.position;
         nextposition = Vector3.forward;
         currentdirection = up;
+        position = transform.position + transform.forward * 1.5f;
 
         walk = gameObject.GetComponent<Animator>();
+
+        floors = GameObject.FindGameObjectWithTag("Floor");
 
     }
 
@@ -113,12 +119,30 @@ public class PlayerScript : MonoBehaviour
             move = false;
             yield return new WaitForSeconds(5.5f);
         }
+
+        Ray checker2 = new Ray(transform.position + position, -Vector3.up);
+        RaycastHit hit;
+
+        Debug.DrawRay(checker2.origin, checker2.direction, Color.red);
+
+        if (Physics.Raycast(checker2, out hit, range))
+        {
+            if (hit.collider.tag == "Floor")
+            {
+                if (floors.GetComponent<Renderer>().material.color == Color.red)
+                {
+                    move = false;
+                }
+            }
+        }
     }
 
     bool blocked()
     {
         Ray checker = new Ray(transform.position + new Vector3(0, 0.5f, 0), transform.forward);
         RaycastHit hit;
+
+        Debug.DrawRay(checker.origin, checker.direction, Color.red);
 
         if (Physics.Raycast(checker, out hit, range))
         {
