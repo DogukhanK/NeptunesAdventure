@@ -26,15 +26,10 @@ public class Tilemap : MonoBehaviour
             }
         }
 
-        for (int x=0; x < 20; x++)
+        for (int x=0; x < 30; x++)
         {
             // Random Obstacle Placement
-            tile[Random.Range(0, 15), Random.Range(0, 15)] = Random.Range(1, 2);
-        }
-        for (int x = 0; x < 20; x++)
-        {
-            // Random Rock Placement
-            tile[Random.Range(0, 15), Random.Range(0,15)] = 3;
+            tile[Random.Range(0, 15), Random.Range(0, 15)] = Random.Range(1, 4);
         }
 
         SpawnMap();

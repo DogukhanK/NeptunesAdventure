@@ -349,4 +349,4 @@ MonoBehaviour:
   - name: Hole
     Prefab: {fileID: 1084338294951030710, guid: 1be886039d46fb74ea1f9def65dd40e1, type: 3}
   - name: Rock
-    Prefab: {fileID: 3752459356310985065, guid: b28f65e011c410943adebfa18cce96c9, type: 3}
+    Prefab: {fileID: 8085239494650072114, guid: b28f65e011c410943adebfa18cce96c9, type: 3}
