@@ -45,6 +45,10 @@ public class Tilemap : MonoBehaviour
     class Node
     {
         public List<Node> points;
+        public Node()
+        {
+            points = new List<Node>();
+        }
     }
 
     void graphMap()
@@ -55,10 +59,16 @@ public class Tilemap : MonoBehaviour
         {
             for (int z = 0; z < mapZ; z++)
             {
-                graph[x, z].points.Add(graph[x - 1, z]);
-                graph[x, z].points.Add(graph[x + 1, z]);
-                graph[x, z].points.Add(graph[x, z - 1]);
-                graph[x, z].points.Add(graph[x, z + 1]);
+                graph[x, z] = new Node();
+
+                if(x > 0)
+                    graph[x, z].points.Add(graph[x - 1, z]);
+                if(x < mapX - 1)
+                    graph[x, z].points.Add(graph[x + 1, z]);
+                if(z > 0)
+                    graph[x, z].points.Add(graph[x, z - 1]);
+                if(z < mapZ - 1)
+                    graph[x, z].points.Add(graph[x, z + 1]);
             }
         }
     }
@@ -96,10 +106,28 @@ public class Tilemap : MonoBehaviour
 
         //Dijkstra pathfinding algorithm
         Dictionary<Node, float> distance = new Dictionary<Node, float>();
+        Dictionary<Node, Node> previous = new Dictionary<Node, Node>();
 
-        Node source = graph[player.GetComponent<player>().tileX];
-        Node source = graph[player.GetComponent<player>().tileZ];
+        List<Node> q = new List<Node>();
+
+        Node source = graph[player.GetComponent<player>().tileX, player.GetComponent<player>().tileZ];
 
         distance[source] = 0;
+        previous[source] = null;
+
+        foreach (Node v in graph)
+        {
+            if (v != source)
+            {
+                distance[v] = Mathf.Infinity;
+                previous[v] = null;
+            }
+
+            q.Add(v);
+        }
+        while (q.Count > 0)
+        {
+            Node u = q.OrderBy(n => distance[n]).First();
+        }
     }
 }
