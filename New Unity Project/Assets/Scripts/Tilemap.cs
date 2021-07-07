@@ -8,8 +8,8 @@ public class Tilemap : MonoBehaviour
     int[,] tile;
 
     //15x15 map size
-    int mapX = 15;
-    int mapZ = 15;
+    int mapX = 7;
+    int mapZ = 7;
 
     int y = 0;
 
@@ -26,10 +26,10 @@ public class Tilemap : MonoBehaviour
             }
         }
 
-        for (int x=0; x < 30; x++)
+        for (int x=0; x < 4; x++)
         {
             // Random Obstacle Placement
-            tile[Random.Range(0, 15), Random.Range(0, 15)] = Random.Range(1, 4);
+            tile[Random.Range(1, 7), Random.Range(1, 7)] = Random.Range(1, 4);
         }
 
         SpawnMap();
