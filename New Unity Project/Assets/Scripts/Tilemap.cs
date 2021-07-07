@@ -56,8 +56,16 @@ public class Tilemap : MonoBehaviour
         }
     }
 
+    public Vector3 coord(int x, int z)
+    {
+        return new Vector3(x, 0.5f, z);
+    }
     public void playerMovement(int x, int z)
     {
-        player.transform.position = new Vector3(x, 0.5f, z);
+        //set player coord info
+        player.GetComponent<player>().tileX = x;
+        player.GetComponent<player>().tileZ = z;
+        //set player visual info
+        player.transform.position = coord(x, z);
     }
 }
