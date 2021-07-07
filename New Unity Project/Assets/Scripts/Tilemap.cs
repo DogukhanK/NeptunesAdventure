@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tilemap : MonoBehaviour
 {
+    public GameObject player;
+
     public TileType[] tileType;
     int[,] tile;
 
@@ -44,8 +46,18 @@ public class Tilemap : MonoBehaviour
             {
                 TileType g = tileType[tile[x, z]];
 
-                Instantiate (g.Prefab, new Vector3(x, y, z), Quaternion.identity);
+                GameObject t = (GameObject)Instantiate (g.Prefab, new Vector3(x, y, z), Quaternion.identity);
+
+                Interactable i = t.GetComponent<Interactable>();
+                i.tileX = x;
+                i.tileZ = z;
+                i.map = this;
             }
         }
+    }
+
+    public void playerMovement(int x, int z)
+    {
+        player.transform.position = new Vector3(x, y, z);
     }
 }
