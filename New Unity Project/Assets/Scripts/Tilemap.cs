@@ -58,6 +58,6 @@ public class Tilemap : MonoBehaviour
 
     public void playerMovement(int x, int z)
     {
-        player.transform.position = new Vector3(x, y, z);
+        player.transform.position = new Vector3(x, 0.5f, z);
     }
 }
