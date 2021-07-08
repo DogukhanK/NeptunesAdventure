@@ -18,8 +18,7 @@ public class Gem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        score.GetComponent<Text>().text = "1";
-        score2.GetComponent<Text>().text = "1";
+        UpdateScore.currentScore += 1;
         sfx.Play();
         Destroy(gameObject);
     }
