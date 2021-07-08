@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gem : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Gem : MonoBehaviour
 
     void OnTriggerEnter()
     {
+        score.GetComponent<Text>().text = "1";
         sfx.Play();
         Destroy(gameObject);
     }
