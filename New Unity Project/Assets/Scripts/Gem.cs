@@ -5,7 +5,8 @@ using UnityEngine;
 public class Gem : MonoBehaviour
 {
     public float speed = 0.3f;
-    public GameObject gem;
+    public AudioSource sfx;
+    public GameObject score;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class Gem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        Destroy(gem);
+        sfx.Play();
+        Destroy(gameObject);
     }
 }
