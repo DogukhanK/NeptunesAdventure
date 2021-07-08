@@ -8,6 +8,7 @@ public class Gem : MonoBehaviour
     public float speed = 0.3f;
     public AudioSource sfx;
     public GameObject score;
+    public GameObject score2;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +19,7 @@ public class Gem : MonoBehaviour
     void OnTriggerEnter()
     {
         score.GetComponent<Text>().text = "1";
+        score2.GetComponent<Text>().text = "1";
         sfx.Play();
         Destroy(gameObject);
     }
