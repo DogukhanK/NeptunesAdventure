@@ -10,11 +10,10 @@ public class UpdateScore : MonoBehaviour
     public static int currentScore;
     public int displayScore;
 
-    // Update is called once per frame
     void Update()
     {
-        displayScore = currentScore;
-        score.GetComponent<Text>().text = "" + displayScore;
+        displayScore = currentScore;                           //get score value from gem script
+        score.GetComponent<Text>().text = "" + displayScore;   //give value to UI 
         score2.GetComponent<Text>().text = "" + displayScore;
     }
 }

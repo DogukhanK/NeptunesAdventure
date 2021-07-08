@@ -13,13 +13,13 @@ public class Gem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, speed, 0, Space.World); //rotate relative to the world
+        transform.Rotate(0, speed, 0, Space.World);  //rotate relative to the world
     }
 
     void OnTriggerEnter()
     {
-        UpdateScore.currentScore += 1;
-        sfx.Play();
-        Destroy(gameObject);
+        UpdateScore.currentScore += 1;               //update score value in UpdateScore script
+        sfx.Play();                                  //play sfx 
+        Destroy(gameObject);                         //remove gem form the world
     }
 }
