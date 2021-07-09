@@ -54,6 +54,7 @@ namespace UnityChan
 		public AudioSource runAudio;
 		private bool isRunning = false;
 		public AudioSource restAudio;
+		Animator pose;
 
 		// 初期化
 		void Start ()
@@ -70,6 +71,7 @@ namespace UnityChan
 			orgVectColCenter = col.center;
 
 			runAudio.Stop();
+			pose = gameObject.GetComponent<Animator>();
 		}
 	
 	
@@ -199,6 +201,11 @@ namespace UnityChan
 					anim.SetBool ("Rest", false);
 				}
 			}
+
+			if (Finish.winCondition == true)
+            {
+				pose.SetBool("Win", true);
+            }
 		}
 
 		// キャラクターのコライダーサイズのリセット関数

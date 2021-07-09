@@ -10,6 +10,10 @@ public class UpdateScore : MonoBehaviour
     public static int currentScore;
     public int displayScore;
 
+    void Start()
+    {
+        currentScore = 0;
+    }
     void Update()
     {
         displayScore = currentScore;                           //get score value from gem script
