@@ -50,6 +50,11 @@ namespace UnityChan
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
 
+		public AudioSource jumpAudio;
+		public AudioSource runAudio;
+		private bool isRunning = false;
+		public AudioSource restAudio;
+
 		// 初期化
 		void Start ()
 		{
@@ -63,6 +68,8 @@ namespace UnityChan
 			// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
+
+			runAudio.Stop();
 		}
 	
 	
@@ -78,17 +85,32 @@ namespace UnityChan
 			rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
 		
 		
-		
+
 			// 以下、キャラクターの移動処理
 			velocity = new Vector3 (0, 0, v);		// 上下のキー入力からZ軸方向の移動量を取得
 			// キャラクターのローカル空間での方向に変換
 			velocity = transform.TransformDirection (velocity);
 			//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
 			if (v > 0.1) {
-				velocity *= forwardSpeed;		// 移動速度を掛ける
+				velocity *= forwardSpeed;       // 移動速度を掛ける
+				isRunning = true;
 			} else if (v < -0.1) {
 				velocity *= backwardSpeed;	// 移動速度を掛ける
 			}
+			else if (v == 0)
+            {
+				isRunning = false;
+            }
+
+			if (isRunning)
+			{
+				if(!runAudio.isPlaying)
+                {
+					runAudio.Play();
+				}
+			}
+			else
+				runAudio.Stop();
 		
 			if (Input.GetButtonDown ("Jump")) {	// スペースキーを入力したら
 
@@ -97,7 +119,8 @@ namespace UnityChan
 					//ステート遷移中でなかったらジャンプできる
 					if (!anim.IsInTransition (0)) {
 						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
-						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
+						anim.SetBool ("Jump", true);        // Animatorにジャンプに切り替えるフラグを送る
+						jumpAudio.Play();
 					}
 				}
 			}
