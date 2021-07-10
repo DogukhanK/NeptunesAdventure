@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: -8.910004}
-  m_SizeDelta: {x: 200, y: 3}
+  m_SizeDelta: {x: 400, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5958438
 MonoBehaviour:
@@ -2059,7 +2059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &746266847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2558,7 +2558,6 @@ GameObject:
   - component: {fileID: 953739441}
   - component: {fileID: 953739440}
   - component: {fileID: 953739439}
-  - component: {fileID: 953739442}
   - component: {fileID: 953739443}
   - component: {fileID: 953739444}
   m_Layer: 0
@@ -2616,22 +2615,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &953739442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953739438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564d71e7e2cb83b41bb6e3352105272c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 479971733}
-  timer2: {fileID: 805043338}
-  seconds: -1
-  isIncreasing: 0
 --- !u!114 &953739443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,7 +2629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 1933399804}
   score2: {fileID: 1920315468}
-  displayScore: 0
 --- !u!114 &953739444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2820,7 +2802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1035866583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3210,7 +3192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 1365737150}
-  levelTimer: {fileID: 479971733}
+  levelTimer: {fileID: 2076485288}
   endTime: {fileID: 1831587600}
   endTime2: {fileID: 346867185}
   endScore: {fileID: 1035866582}
@@ -3218,6 +3200,7 @@ MonoBehaviour:
   totalScore: {fileID: 1877551401}
   totalScore2: {fileID: 1064121447}
   calculateFinalScore: 0
+  finalScore: 0
   levelWin: {fileID: 1858316430}
 --- !u!1 &1265828883
 GameObject:
@@ -4697,7 +4680,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -9.5}
-  m_SizeDelta: {x: 200, y: 3}
+  m_SizeDelta: {x: 400, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698678320
 MonoBehaviour:
@@ -5942,6 +5925,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b512b0c671585434583c7804516c3ef1, type: 3}
+--- !u!1 &2076485288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076485290}
+  - component: {fileID: 2076485289}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2076485289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076485288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564d71e7e2cb83b41bb6e3352105272c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 479971733}
+  timer2: {fileID: 805043338}
+  isIncreasing: 0
+--- !u!4 &2076485290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076485288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 688.9536, y: 314.77316, z: 16.782362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2095126047
 PrefabInstance:
   m_ObjectHideFlags: 0
