@@ -7,12 +7,14 @@ public class UpdateScore : MonoBehaviour
 {
     public GameObject score;
     public GameObject score2;
+    public static int displayScore;
     public static int currentScore;
-    public int displayScore;
+    public static int gemsCollected;
 
     void Start()
     {
         currentScore = 0;
+        gemsCollected = 0;
     }
     void Update()
     {

@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public GameObject timer;
     public GameObject timer2;
 
-    public int seconds = 0;
+    public static int seconds = 0;
     public bool isIncreasing = false;
 
     void Update()

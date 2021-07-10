@@ -17,7 +17,8 @@ public class Gem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        UpdateScore.currentScore += 1;               //update score value in UpdateScore script
+        UpdateScore.currentScore += 10;               //update score value in UpdateScore script
+        UpdateScore.gemsCollected += 1;              //update total gems collected 
         sfx.Play();                                  //play sfx 
         Destroy(gameObject);                         //remove gem form the world
     }

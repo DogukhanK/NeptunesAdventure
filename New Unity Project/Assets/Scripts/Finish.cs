@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
@@ -13,12 +14,24 @@ public class Finish : MonoBehaviour
     public GameObject totalScore;
     public GameObject totalScore2;
 
+    public int calculateFinalScore;
+    public int finalScore;
+
     public AudioSource levelWin;
 
     public static bool winCondition;
 
     void OnTriggerEnter()
     {
+        endTime.GetComponent<Text>().text = "Time: " + Timer.seconds;
+        endTime2.GetComponent<Text>().text = "Time: " + Timer.seconds;
+        calculateFinalScore = UpdateScore.displayScore * UpdateScore.gemsCollected;
+        endScore.GetComponent<Text>().text = "Score: " + UpdateScore.displayScore + "  xGems Collected";
+        endScore2.GetComponent<Text>().text = "Score: " + UpdateScore.displayScore + "  xGems Collected";
+        finalScore = calculateFinalScore;
+        totalScore.GetComponent<Text>().text = "Total Score: " + finalScore;
+        totalScore2.GetComponent<Text>().text = "Total Score: " + finalScore;
+
         music.SetActive(false);
         levelTimer.SetActive(false);
         levelWin.Play();

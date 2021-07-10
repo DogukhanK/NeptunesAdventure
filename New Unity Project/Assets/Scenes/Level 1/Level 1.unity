@@ -1093,7 +1093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 37.91}
+  m_AnchoredPosition: {x: -194, y: 37.91}
   m_SizeDelta: {x: 381.04822, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346867187
@@ -2059,7 +2059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &746266847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2077,8 +2077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -2.09}
-  m_SizeDelta: {x: 381.04822, y: 86.3999}
+  m_AnchoredPosition: {x: 241.38, y: 37.91}
+  m_SizeDelta: {x: 527.61816, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746266848
 MonoBehaviour:
@@ -2113,7 +2113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 'Score: 0    xGems Collected'
 --- !u!222 &746266849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2820,7 +2820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1035866583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2838,8 +2838,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 381.04822, y: 86.3999}
+  m_AnchoredPosition: {x: 239.38, y: 40}
+  m_SizeDelta: {x: 527.623, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035866584
 MonoBehaviour:
@@ -2874,7 +2874,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 'Score: 0    xGems Collected
+
+'
 --- !u!222 &1035866585
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2959,7 +2961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -52.09}
+  m_AnchoredPosition: {x: 198, y: -52.09}
   m_SizeDelta: {x: 381.04822, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1100516739
@@ -3215,6 +3217,7 @@ MonoBehaviour:
   endScore2: {fileID: 746266846}
   totalScore: {fileID: 1877551401}
   totalScore2: {fileID: 1064121447}
+  calculateFinalScore: 0
   levelWin: {fileID: 1858316430}
 --- !u!1 &1265828883
 GameObject:
@@ -4998,7 +5001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: -196, y: 40}
   m_SizeDelta: {x: 381.04822, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831587602
@@ -5341,7 +5344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 196, y: -50}
   m_SizeDelta: {x: 381.04822, y: 86.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877551403
