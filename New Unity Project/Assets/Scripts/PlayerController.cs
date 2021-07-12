@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5.0f;
     public float rotationSpeed = 250.0f;
-    public float jumpPower = 3.0f;
+    //public float jumpPower = 3.0f;
 
     public AudioSource jumpAudio;
     public AudioSource runAudio;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
             if (jumpCooldown == false)
             {
                 anim.SetTrigger("Jump");
-                rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
+                //rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
                 jumpAudio.Play();
                 Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
                 jumpCooldown = true;
