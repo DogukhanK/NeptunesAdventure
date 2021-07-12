@@ -8,9 +8,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator anim;
+    Rigidbody rb;
+    CapsuleCollider col;
 
     public float speed = 5.0f;
-    public float rotationSpeed = 100.0f;
+    public float rotationSpeed = 250.0f;
+    public float jumpPower = 3.0f;
 
     public AudioSource jumpAudio;
     public AudioSource runAudio;
@@ -20,9 +23,13 @@ public class PlayerController : MonoBehaviour
     private bool jumpCooldown = false;
     private bool attackCooldown = false;
 
+    private Vector3 moveDirection = Vector3.zero;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -63,6 +70,7 @@ public class PlayerController : MonoBehaviour
             if (jumpCooldown == false)
             {
                 anim.SetTrigger("Jump");
+                rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
                 jumpAudio.Play();
                 Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
                 jumpCooldown = true;
