@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour
+public class ReloadLevel : MonoBehaviour
 {
-    public static int level = 4;
+    public static int level = 5;
 
     void Update()
     {
-        if (level == 4)
+        if (level == 5)
         {
             SceneManager.LoadScene(level);
         }
