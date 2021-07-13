@@ -38,6 +38,8 @@ public class Finish : MonoBehaviour
         winCondition = true;
 
         StartCoroutine(calculator());
+
+        LevelSelection.isCompleted++;
     }
 
     IEnumerator calculator()

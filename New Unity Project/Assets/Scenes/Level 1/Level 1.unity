@@ -1137,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 795653342}
     - target: {fileID: 1278121282616551424, guid: 233cbf6c5f6b6364e9390a4050dc85e3, type: 3}
       propertyPath: speed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1278121282616551425, guid: 233cbf6c5f6b6364e9390a4050dc85e3, type: 3}
       propertyPath: m_UseGravity
@@ -2304,7 +2304,7 @@ PrefabInstance:
       objectReference: {fileID: 226427475}
     - target: {fileID: 5619532185266437598, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
       propertyPath: speed
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5619532185266437598, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
       propertyPath: rotationSpeed
@@ -6322,6 +6322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9d0c1d91fb35a40950b4d66582c999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Neptune: {fileID: 0}
+  Neptune2: {fileID: 0}
 --- !u!4 &2071396667
 Transform:
   m_ObjectHideFlags: 0

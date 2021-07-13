@@ -9,6 +9,9 @@ public class CharacterSelection : MonoBehaviour
 
     public static int index = 0;
 
+    public AudioSource Neptune;
+    public AudioSource Neptune2;
+
     void Start()
     {
         index = PlayerPrefs.GetInt("CharacterSelected");
@@ -62,6 +65,29 @@ public class CharacterSelection : MonoBehaviour
     public void Confirm()
     {
         PlayerPrefs.SetInt("CharacterSelected", index);
+
+        if (index == 0)
+        {
+            Neptune.Play();
+            StartCoroutine(StartDelay());
+        }
+
+        if (index == 1)
+        {
+            Neptune2.Play();
+            StartCoroutine(StartDelay2());
+        }
+    }
+
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(3);
+    }
+
+    IEnumerator StartDelay2()
+    {
+        yield return new WaitForSeconds(1.6f);
         SceneManager.LoadScene(3);
     }
 }

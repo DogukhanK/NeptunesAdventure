@@ -40,6 +40,6 @@ public class MainMenu : MonoBehaviour
     IEnumerator QuitDelay()
     {
         yield return new WaitForSeconds(1);
-        //insert quit code
+        Application.Quit();
     }
 }
