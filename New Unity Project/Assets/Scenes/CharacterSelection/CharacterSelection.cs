@@ -7,7 +7,7 @@ public class CharacterSelection : MonoBehaviour
 {
     private GameObject[] characterList;
 
-    private int index = 0;
+    public static int index = 0;
 
     void Start()
     {

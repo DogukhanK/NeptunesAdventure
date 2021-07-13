@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 184329522}
   - component: {fileID: 184329521}
   - component: {fileID: 184329524}
+  - component: {fileID: 184329525}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -686,9 +687,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5cdf12d5c6d5948a61cd07cb5be288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2071396667}
+  player: {fileID: 695487397}
   camDist: 3
   camHeight: 2
+--- !u!114 &184329525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184329520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b969eaa633805c54a907ac6b29441279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 184329520}
+  camera2: {fileID: 1590732254}
 --- !u!1001 &197463170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1134,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1600596416165019942, guid: 233cbf6c5f6b6364e9390a4050dc85e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1600596416165019942, guid: 233cbf6c5f6b6364e9390a4050dc85e3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2219,6 +2234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neptune
       objectReference: {fileID: 0}
+    - target: {fileID: 4701194434793636787, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5365528519203576073, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2229,7 +2248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365528519203576073, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365528519203576073, guid: a3b35f8093b340a4fb9dc727ca1bab83, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4839,13 +4858,14 @@ GameObject:
   - component: {fileID: 1590732257}
   - component: {fileID: 1590732256}
   - component: {fileID: 1590732255}
+  - component: {fileID: 1590732259}
   m_Layer: 0
   m_Name: MainCamera2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1590732255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4858,7 +4878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5cdf12d5c6d5948a61cd07cb5be288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 325334063}
   camDist: 3
   camHeight: 2
 --- !u!81 &1590732256
@@ -4926,6 +4946,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590732259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590732254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b969eaa633805c54a907ac6b29441279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 184329520}
+  camera2: {fileID: 1590732254}
 --- !u!1001 &1608278427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6287,8 +6321,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071396665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0.5, z: -3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0.5, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 695487397}
