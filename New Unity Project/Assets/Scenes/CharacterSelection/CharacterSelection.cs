@@ -11,6 +11,8 @@ public class CharacterSelection : MonoBehaviour
 
     void Start()
     {
+        index = PlayerPrefs.GetInt("CharacterSelected");
+
         characterList = new GameObject[transform.childCount];       //add players into an array
 
         for (int i = 0; i < transform.childCount; i++)
@@ -22,9 +24,9 @@ public class CharacterSelection : MonoBehaviour
          {
              go.SetActive(false);                                //set invisible
          }
-         if (characterList[0])
+         if (characterList[index])
          {
-             characterList[0].SetActive(true);
+             characterList[index].SetActive(true);
          }
         
     }
@@ -59,6 +61,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void Confirm()
     {
+        PlayerPrefs.SetInt("CharacterSelected", index);
         SceneManager.LoadScene(3);
     }
 }
