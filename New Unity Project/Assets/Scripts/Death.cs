@@ -23,6 +23,6 @@ public class Death : MonoBehaviour
         yield return new WaitForSeconds(1);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }
