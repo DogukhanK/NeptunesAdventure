@@ -50,6 +50,8 @@ public class Finish : MonoBehaviour
         StartCoroutine(calculator());
 
         LevelSelection.isCompleted++;
+
+        Cursor.visible = true;
     }
 
     IEnumerator calculator()

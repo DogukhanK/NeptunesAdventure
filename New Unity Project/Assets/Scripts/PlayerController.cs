@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+
+        Cursor.visible = false;
     }
 
     void Update()
