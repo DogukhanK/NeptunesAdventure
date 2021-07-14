@@ -18,6 +18,7 @@ public class Finish : MonoBehaviour
     public int finalScore;
 
     public AudioSource levelWin;
+    public AudioSource levelWin2;
 
     public static bool winCondition;
 
@@ -34,7 +35,16 @@ public class Finish : MonoBehaviour
 
         music.SetActive(false);
         levelTimer.SetActive(false);
-        levelWin.Play();
+
+        if (CharacterSelection.index == 0)
+        {
+            levelWin.Play();
+        }
+        if (CharacterSelection.index == 1)
+        {
+            levelWin2.Play();
+        }
+
         winCondition = true;
 
         StartCoroutine(calculator());
