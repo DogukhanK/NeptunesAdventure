@@ -15,6 +15,8 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerAttackPose;
     public GameObject playerFlinchPose;
     public GameObject playerDeathPose;
+    public GameObject playerStationTrue;
+    public GameObject playerStationFake;
 
     public Transform playerStation;
     public Transform enemyStation;
@@ -63,7 +65,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        playerStationTrue.SetActive(true);
         playerAttackPose.SetActive(false);
+        playerStationFake.SetActive(false);
 
         yield return new WaitForSeconds(2);
 
@@ -103,7 +107,9 @@ public class BattleSystem : MonoBehaviour
 
         dialogue.text = enemyUnit.name + " Attacks!!!";
 
+        playerStationTrue.SetActive(false);
         playerFlinchPose.SetActive(true);
+        playerStationFake.SetActive(true);
 
         bool isDead = playerUnit.Damaged(enemyUnit.damage);
 
@@ -111,7 +117,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        playerStationTrue.SetActive(true);
         playerFlinchPose.SetActive(false);
+        playerStationFake.SetActive(false);
 
         yield return new WaitForSeconds(2);
 
@@ -139,7 +147,9 @@ public class BattleSystem : MonoBehaviour
             return;
         }
 
+        playerStationTrue.SetActive(false);
         playerAttackPose.SetActive(true);
+        playerStationFake.SetActive(true);
 
         StartCoroutine(playerAttack());
     }
@@ -158,12 +168,16 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
+            playerStationTrue.SetActive(false);
             playerDeathPose.SetActive(true);
+            playerStationFake.SetActive(true);
             dialogue.text = "CONGRATULATIONS";
         }
         else if (state == BattleState.LOST)
         {
+            playerStationTrue.SetActive(false);
             playerDeathPose.SetActive(true);
+            playerStationFake.SetActive(true);
             dialogue.text = "YOU LOST";
         }
     }
