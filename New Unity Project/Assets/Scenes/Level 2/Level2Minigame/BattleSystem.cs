@@ -12,6 +12,9 @@ public class BattleSystem : MonoBehaviour
 
     public GameObject player;
     public GameObject enemy;
+    public GameObject playerAttackPose;
+    public GameObject playerFlinchPose;
+    public GameObject playerDeathPose;
 
     public Transform playerStation;
     public Transform enemyStation;
@@ -53,13 +56,16 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator playerAttack()
     {
-
         bool isDead = enemyUnit.Damaged(playerUnit.damage);
 
         enemyHUD.setHealth(enemyUnit.currentHealth);
         dialogue.text = "You Attacked";
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+
+        playerAttackPose.SetActive(false);
+
+        yield return new WaitForSeconds(2);
 
         if (isDead == true)
         {
@@ -91,13 +97,21 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator enemyTurn()
     {
-        dialogue.text = enemyUnit.name + " Attacks!!!";
+        dialogue.text = "Enemy Turn!!!";
 
         yield return new WaitForSeconds(2);
+
+        dialogue.text = enemyUnit.name + " Attacks!!!";
+
+        playerFlinchPose.SetActive(true);
 
         bool isDead = playerUnit.Damaged(enemyUnit.damage);
 
         playerHUD.setHealth(playerUnit.currentHealth);
+
+        yield return new WaitForSeconds(1);
+
+        playerFlinchPose.SetActive(false);
 
         yield return new WaitForSeconds(2);
 
@@ -125,6 +139,8 @@ public class BattleSystem : MonoBehaviour
             return;
         }
 
+        playerAttackPose.SetActive(true);
+
         StartCoroutine(playerAttack());
     }
 
@@ -142,10 +158,12 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
+            playerDeathPose.SetActive(true);
             dialogue.text = "CONGRATULATIONS";
         }
         else if (state == BattleState.LOST)
         {
+            playerDeathPose.SetActive(true);
             dialogue.text = "YOU LOST";
         }
     }
