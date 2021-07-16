@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Finish : MonoBehaviour
     public GameObject totalScore2;
     public GameObject blocker;
     public GameObject blocker2;
+    public GameObject fadeOut;
 
     public int calculateFinalScore;
     public int finalScore;
@@ -26,6 +28,8 @@ public class Finish : MonoBehaviour
 
     void OnTriggerEnter()
     {
+
+        GetComponent<BoxCollider>().enabled = false;
         blocker.SetActive(true);
         blocker2.SetActive(true);
         blocker.transform.parent = null;
@@ -72,6 +76,10 @@ public class Finish : MonoBehaviour
         yield return new WaitForSeconds(1.25f);
         totalScore.SetActive(true);
         totalScore2.SetActive(true);
+        yield return new WaitForSeconds(3);
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene(1);
 
     }
 }

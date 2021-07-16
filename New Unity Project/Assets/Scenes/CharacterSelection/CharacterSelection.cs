@@ -11,6 +11,7 @@ public class CharacterSelection : MonoBehaviour
 
     public AudioSource Neptune;
     public AudioSource Neptune2;
+    public AudioSource click;
 
     void Start()
     {
@@ -38,6 +39,8 @@ public class CharacterSelection : MonoBehaviour
     {
         characterList[index].SetActive(false);
 
+        click.Play();
+
         index--;
 
         if (index < 0)
@@ -51,6 +54,8 @@ public class CharacterSelection : MonoBehaviour
     public void Right()
     {
         characterList[index].SetActive(false);
+
+        click.Play();
 
         index++;
 
