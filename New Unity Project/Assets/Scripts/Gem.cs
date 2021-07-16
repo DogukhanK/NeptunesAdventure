@@ -12,7 +12,7 @@ public class Gem : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, speed, 0, Space.World);  //rotate relative to the world
+        transform.Rotate(0, speed * Time.timeScale, 0, Space.World);  //rotate relative to the world
     }
 
     void OnTriggerEnter()
