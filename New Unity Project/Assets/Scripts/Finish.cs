@@ -13,6 +13,8 @@ public class Finish : MonoBehaviour
     public GameObject endScore2;
     public GameObject totalScore;
     public GameObject totalScore2;
+    public GameObject blocker;
+    public GameObject blocker2;
 
     public int calculateFinalScore;
     public int finalScore;
@@ -24,6 +26,11 @@ public class Finish : MonoBehaviour
 
     void OnTriggerEnter()
     {
+        blocker.SetActive(true);
+        blocker2.SetActive(true);
+        blocker.transform.parent = null;
+        blocker2.transform.parent = null;
+
         endTime.GetComponent<Text>().text = "Time: " + Timer.seconds;
         endTime2.GetComponent<Text>().text = "Time: " + Timer.seconds;
         calculateFinalScore = UpdateScore.displayScore * UpdateScore.gemsCollected;

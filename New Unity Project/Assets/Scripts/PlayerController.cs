@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<CapsuleCollider>();
 
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
