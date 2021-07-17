@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public AudioSource click;
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void StartGame()
     {
         click.Play();
