@@ -11,7 +11,7 @@ public class ReloadLevel : MonoBehaviour
     {
         if (level == 5)
         {
-            SceneManager.LoadScene(level);
+            SceneManager.LoadScene(LevelSelection.currentLevelCode);
         }
     }
 }

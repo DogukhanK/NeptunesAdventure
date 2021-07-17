@@ -7,6 +7,7 @@ public class LevelSelection : MonoBehaviour
 {
     public static int currentLevelCode;
     public static int isCompleted = 1;
+    public static int thisLevel;
 
     public GameObject Level2Button;
     public GameObject Level3Button;
@@ -43,6 +44,7 @@ public class LevelSelection : MonoBehaviour
         click.Play();
         StartCoroutine(Level1Delay());
         currentLevelCode = 5;
+        thisLevel = 1;
     }
 
     public void Level2()
@@ -50,6 +52,7 @@ public class LevelSelection : MonoBehaviour
         click.Play();
         StartCoroutine(Level2Delay());
         currentLevelCode = 6;
+        thisLevel = 2;
     }
 
     public void Level3()
@@ -57,6 +60,7 @@ public class LevelSelection : MonoBehaviour
         click.Play();
         StartCoroutine(Level3Delay());
         currentLevelCode = 7;
+        thisLevel = 3;
     }
 
     public void Level4()
@@ -64,6 +68,7 @@ public class LevelSelection : MonoBehaviour
         click.Play();
         StartCoroutine(Level4Delay());
         currentLevelCode = 8;
+        thisLevel = 4;
     }
 
     IEnumerator Level1Delay()
