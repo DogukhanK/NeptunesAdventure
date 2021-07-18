@@ -31,6 +31,10 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
+        Cursor.visible = true;
+
         state = BattleState.START;
 
         StartCoroutine(SetupBattle());

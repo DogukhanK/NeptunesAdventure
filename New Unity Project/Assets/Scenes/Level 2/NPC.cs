@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class NPC : MonoBehaviour
 
     public Text name;
     public Text uiDialogue;
+
+    public GameObject continueButton;
+    public GameObject acceptButton;
+    public GameObject textBox;
+    public GameObject oldText;
+
+    public static int isMinigame = 0;
+
 
     void Start()
     {
@@ -37,6 +46,13 @@ public class NPC : MonoBehaviour
             return;
         }
 
+        if (dialogueText.Count == 1)
+        {
+            continueButton.SetActive(false);
+            acceptButton.SetActive(true);
+        }
+
+
         string sentence = dialogueText.Dequeue();
         uiDialogue.text = sentence;
     }
@@ -44,6 +60,14 @@ public class NPC : MonoBehaviour
     private void EndDialogue()
     {
         Debug.Log("end");
+    }
+
+    public void acceptButtonClicked()
+    {
+        acceptButton.SetActive(false);
+        oldText.SetActive(false);
+        textBox.SetActive(true);
+        SceneManager.LoadScene(10);
     }
 }
 
