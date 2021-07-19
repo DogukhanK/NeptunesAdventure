@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Obstacle
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
