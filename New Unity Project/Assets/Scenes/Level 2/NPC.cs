@@ -67,7 +67,7 @@ public class NPC : MonoBehaviour
         acceptButton.SetActive(false);
         oldText.SetActive(false);
         textBox.SetActive(true);
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(9);
     }
 }
 
