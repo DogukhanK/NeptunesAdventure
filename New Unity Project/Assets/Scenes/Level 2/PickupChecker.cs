@@ -14,6 +14,8 @@ public class PickupChecker : MonoBehaviour
     public GameObject gem3;
     public GameObject gem4;
 
+    public static int totalCollected = 0;
+
     void Update()
     {
         isPickedUp();
@@ -24,21 +26,25 @@ public class PickupChecker : MonoBehaviour
         if (gem1 == null)
         {
             tile.GetComponent<Renderer>().material.color = Color.green;
+            totalCollected++;
         }
 
         if (gem2 == null)
         {
             tile2.GetComponent<Renderer>().material.color = Color.green;
+            totalCollected++;
         }
 
         if (gem3 == null)
         {
             tile3.GetComponent<Renderer>().material.color = Color.green;
+            totalCollected++;
         }
 
         if (gem4 == null)
         {
             tile4.GetComponent<Renderer>().material.color = Color.green;
+            totalCollected++;
         }
     }
 
