@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, TURN, ENEMYTURN, WON, LOST }
 
@@ -176,6 +177,9 @@ public class BattleSystem : MonoBehaviour
             playerDeathPose.SetActive(true);
             playerStationFake.SetActive(true);
             dialogue.text = "CONGRATULATIONS";
+            Return.didWin = true;
+            Return.completed++;
+            SceneManager.LoadScene(6);
         }
         else if (state == BattleState.LOST)
         {
@@ -183,6 +187,9 @@ public class BattleSystem : MonoBehaviour
             playerDeathPose.SetActive(true);
             playerStationFake.SetActive(true);
             dialogue.text = "YOU LOST";
+            Return.didWin = false;
+            Return.completed++;
+            SceneManager.LoadScene(6);
         }
     }
 }
