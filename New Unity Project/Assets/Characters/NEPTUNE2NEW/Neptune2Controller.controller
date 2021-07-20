@@ -82,7 +82,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d49649f407b7faa4990c2abd68decd47, type: 2}
+    m_Motion: {fileID: 7400000, guid: 10cf77f44dacfe74eac417fe52b7e6bd, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -90,7 +90,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1260be49efd6ad643912ce0026b5eb62, type: 2}
+    m_Motion: {fileID: 7400000, guid: 26f3573b9430aad4dbfc297a0b0ef3fd, type: 2}
     m_Threshold: 0.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -98,7 +98,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f4efad0bd6fb36643b6237da0ff471a8, type: 2}
+    m_Motion: {fileID: 7400000, guid: 6a096f870775cb1448f7440f034dbd02, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -119,8 +119,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackNew
-  m_Speed: 2
+  m_Name: Attack2New
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9108591498783597170}
@@ -133,7 +133,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1eed433d59b40d34081923184f38533a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6a9bcbbafb56ce74cb266c890fbed892, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -172,7 +172,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestController
+  m_Name: Neptune2Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed

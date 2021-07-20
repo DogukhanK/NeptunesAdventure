@@ -27,6 +27,7 @@ public class PauseGame : MonoBehaviour
                 Time.timeScale = 0;
                 isPaused = true;
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 music.Pause();
                 pauseMenu.SetActive(true);
             }
@@ -37,6 +38,7 @@ public class PauseGame : MonoBehaviour
                 Time.timeScale = 1;
                 isPaused = false;
                 Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 music.UnPause();
                 pauseMenu.SetActive(false);
             }
