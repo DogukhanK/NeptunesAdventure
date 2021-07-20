@@ -19,6 +19,7 @@ public class DialogueTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             textBox.SetActive(true);
             triggerDialogue();
