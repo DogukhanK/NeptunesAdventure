@@ -17,4 +17,9 @@ public class OptionsMenu : MonoBehaviour
     {
         sfxMixer.SetFloat("volume", sfxVolume);
     }
+
+    public void SetGraphics(int graphicIndex)
+    {
+        QualitySettings.SetQualityLevel(graphicIndex);
+    }
 }
