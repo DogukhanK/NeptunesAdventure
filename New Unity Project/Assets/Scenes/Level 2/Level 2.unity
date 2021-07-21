@@ -1848,7 +1848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302525278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.96, y: 4.13, z: 29.98}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1157965805}
@@ -8160,7 +8160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577959608271392930, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7577959608271392930, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15299,7 +15299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 351359366422197325, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 351359366422197325, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15345,6 +15345,18 @@ PrefabInstance:
       propertyPath: attackAudio
       value: 
       objectReference: {fileID: 7845880}
+    - target: {fileID: 351359366422197326, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
+      propertyPath: jumpDist
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 351359366422197326, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
+      propertyPath: jumpSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 351359366422197327, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 351359366422197330, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
       propertyPath: m_Name
       value: Neptune2New

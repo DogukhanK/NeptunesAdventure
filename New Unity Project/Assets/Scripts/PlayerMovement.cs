@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float doubleJump = 0.5f;
 
     private Vector3 moveDirection;
     private Vector3 velocity;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isRunning = false;
     private bool jumpCooldown = false;
     private bool attackCooldown = false;
+    private bool canDoubleJump = false;
 
     void Start()
     {
@@ -61,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
+            canDoubleJump = true;
+
             if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
@@ -80,7 +84,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
             }
-
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump)
+            {
+                DoubleJump();
+                canDoubleJump = false;
+            }
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -133,9 +144,17 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             jumpAudio.Play();
-            Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
-            jumpCooldown = true;
+            //Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
+            //jumpCooldown = true;
         }
+    }
+
+    void DoubleJump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * doubleJump);
+        jumpAudio.Play();
+        Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
+        jumpCooldown = true;
     }
 
     void Attack()
