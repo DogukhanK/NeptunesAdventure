@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Animator anim;
+    private Rigidbody rb;
 
     public AudioSource jumpAudio;
     public AudioSource runAudio;
@@ -144,8 +145,6 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             jumpAudio.Play();
-            //Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
-            //jumpCooldown = true;
         }
     }
 
