@@ -28691,7 +28691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c32806d0ce6c174283ec4c7c759ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1167876037}
   bridge: {fileID: 473493950}
 --- !u!1 &1705571681
 GameObject:

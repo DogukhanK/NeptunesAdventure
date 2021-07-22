@@ -63,6 +63,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator playerAttack()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         bool isDead = enemyUnit.Damaged(playerUnit.damage);
 
         enemyHUD.setHealth(enemyUnit.currentHealth);
@@ -75,6 +77,8 @@ public class BattleSystem : MonoBehaviour
         playerStationFake.SetActive(false);
 
         yield return new WaitForSeconds(2);
+
+        Cursor.lockState = CursorLockMode.None;
 
         if (isDead == true)
         {
@@ -179,7 +183,7 @@ public class BattleSystem : MonoBehaviour
             dialogue.text = "CONGRATULATIONS";
             Return.didWin = true;
             Return.completed++;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(7);
         }
         else if (state == BattleState.LOST)
         {
@@ -189,7 +193,7 @@ public class BattleSystem : MonoBehaviour
             dialogue.text = "YOU LOST";
             Return.didWin = false;
             Return.completed++;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(7);
         }
     }
 }
