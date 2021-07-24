@@ -32,10 +32,18 @@ public class PlayerMovement : MonoBehaviour
     private bool attackCooldown = false;
     private bool canDoubleJump = false;
 
+    public int maxHealth = 100;
+    public int health;
+
+    public HealthBar healthBar;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -45,6 +53,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeDamage(20);
+        }
+
+        if (Rotating.isTrigger == true)
+        {
+            TakeDamage(20);
+            Rotating.isTrigger = false;
         }
     }
 
@@ -174,5 +193,12 @@ public class PlayerMovement : MonoBehaviour
     void ResetAttackCooldown()
     {
         attackCooldown = false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        healthBar.SetHealth(health);
     }
 }

@@ -7,6 +7,8 @@ public class Rotating : MonoBehaviour
 
     private float speed = 7.0f;
 
+    public static bool isTrigger = false;
+
     void Update()
     {
         transform.Rotate(Vector3.up * Time.deltaTime * speed * 10);
@@ -14,6 +16,6 @@ public class Rotating : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        Debug.Log("ok");
+        isTrigger = true;
     }
 }
