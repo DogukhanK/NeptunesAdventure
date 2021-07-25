@@ -3291,6 +3291,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7577959608271392932, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 7577959608271392933, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
       propertyPath: jumpAudio
       value: 
@@ -3330,6 +3334,10 @@ PrefabInstance:
     - target: {fileID: 7577959608271392934, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577959608271392934, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
@@ -4179,6 +4187,10 @@ PrefabInstance:
     - target: {fileID: 351359366422197330, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 351359366422197330, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa2e63c1e1575644b460ac55f68c302, type: 3}

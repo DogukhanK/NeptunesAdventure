@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelection : MonoBehaviour
 {
     public static int currentLevelCode;
-    public static int isCompleted = 0;
+    public static int isCompleted = 1;
     public static int thisLevel;
 
     public GameObject Level2Button;
