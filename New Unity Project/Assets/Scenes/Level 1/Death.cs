@@ -10,9 +10,20 @@ public class Death : MonoBehaviour
     public GameObject fadeOut;
     public AudioSource deathAudio;
 
+    public static bool isDead = false;
+
+
+    void Update()
+    {
+        if (isDead == true)
+        {
+            StartCoroutine(died());
+        }
+    }
+
     void OnTriggerEnter()
     {
-        StartCoroutine (died());
+        StartCoroutine(died());
     }
 
     IEnumerator died()

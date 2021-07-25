@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource jumpAudio;
     public AudioSource runAudio;
     public AudioSource attackAudio;
+    public AudioSource deathAudio;
 
     private bool isRunning = false;
     private bool jumpCooldown = false;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     public int health;
 
     public HealthBar healthBar;
+    public HealthBar1 healthBar1;
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        healthBar1.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -55,15 +58,16 @@ public class PlayerMovement : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDamage(20);
-        }
-
         if (Rotating.isTrigger == true)
         {
             TakeDamage(20);
             Rotating.isTrigger = false;
+        }
+
+        if (health <= 0)
+        {
+            Death.isDead = true;
+            deathAudio.Play();
         }
     }
 
@@ -200,5 +204,6 @@ public class PlayerMovement : MonoBehaviour
         health -= damage;
 
         healthBar.SetHealth(health);
+        healthBar1.SetHealth(health);
     }
 }
