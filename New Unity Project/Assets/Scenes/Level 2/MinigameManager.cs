@@ -44,6 +44,8 @@ public class MinigameManager : MonoBehaviour
             {
                 isCompleted = true;
 
+                instructionText.SetActive(false);
+
                 if (lever)
                 {
                     lever.SetActive(true);

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverActivation1 : MonoBehaviour
+public class LeverActivation : MonoBehaviour
 {
 	public bool hasBeenHit;
-	public static bool activateDoor = false;
-	public GameObject activateDoorText;
+	public static bool activateTeleporter = false;
+	public GameObject activateTeleportText;
+	public GameObject teleporter;
 
 	// Use this for initialization
 	void Start()
@@ -21,29 +22,31 @@ public class LeverActivation1 : MonoBehaviour
 	}
 
 	void OnTriggerEnter()
-    {
-		activateDoorText.SetActive(true);
-    }
+	{
+		activateTeleportText.SetActive(true);
+	}
 
 	void OnTriggerStay(Collider other)
 	{
 		if (hasBeenHit == false)
 		{
 			if (Input.GetKeyDown(KeyCode.E))
-            {
+			{
 				if (other.tag == "Player")
 				{
 					GetComponent<Animator>().enabled = true;
 					hasBeenHit = true;
-					activateDoor = true;
-					activateDoorText.SetActive(false);
+					activateTeleporter = true;
+					teleporter.SetActive(true);
+					activateTeleportText.SetActive(false);
 				}
-			}			
+			}
+
 		}
 	}
 
 	void OnTriggerExit()
-	{
-		activateDoorText.SetActive(false);
+    {
+		activateTeleportText.SetActive(false);
 	}
 }
