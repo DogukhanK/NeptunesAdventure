@@ -12,6 +12,7 @@ public class ReloadLevel : MonoBehaviour
         if (level == 5)
         {
             SceneManager.LoadScene(LevelSelection.currentLevelCode);
+            Death.isDead = false;
         }
     }
 }

@@ -12300,6 +12300,10 @@ PrefabInstance:
       propertyPath: deathAudio
       value: 
       objectReference: {fileID: 1177864461}
+    - target: {fileID: 7577959608271392933, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
+      propertyPath: healthBar1
+      value: 
+      objectReference: {fileID: 577088167}
     - target: {fileID: 7577959608271392934, guid: f7ac08c3ece865144b974d716ec9b6e1, type: 3}
       propertyPath: m_Name
       value: NeptuneNew
