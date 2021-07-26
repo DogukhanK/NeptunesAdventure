@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpCooldown = false;
     private bool attackCooldown = false;
     private bool canDoubleJump = false;
+    private bool isMoveJump = false; // Does the player want to move when jumping?
 
     public int maxHealth = 100;
     public int health;
@@ -79,11 +80,22 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2.0f;
         }
-        
+
         float moveZ = Input.GetAxis("Vertical");
 
         moveDirection = new Vector3(0, 0, moveZ);
         moveDirection = transform.TransformDirection(moveDirection);
+
+        // Make the player move when jumping
+        if (isMoveJump && !isGrounded)
+        {
+            moveDirection = new Vector3(0, 0, 1);
+            moveDirection = transform.TransformDirection(moveDirection);
+
+            Walk();
+
+            moveDirection *= moveSpeed;
+        }
 
         if (isGrounded)
         {
@@ -166,6 +178,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpCooldown == false)
         {
+            // Does the player want to move when jumping forward?
+            if (Input.GetAxis("Vertical") > 0.0f)
+                isMoveJump = true;
+            else
+                isMoveJump = false;
+
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpAudio.Play();
         }
