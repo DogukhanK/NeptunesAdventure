@@ -31,7 +31,7 @@ public class LeverActivation1 : MonoBehaviour
 		{
 			if (Input.GetKeyDown(KeyCode.E))
             {
-				if (other.tag == "Player")
+				if (other.tag == "Player1")
 				{
 					GetComponent<Animator>().enabled = true;
 					hasBeenHit = true;

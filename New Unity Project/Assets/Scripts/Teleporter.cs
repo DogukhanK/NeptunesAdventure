@@ -12,7 +12,7 @@ public class Teleporter : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player1");
     }
 
     void OnTriggerEnter()
