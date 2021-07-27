@@ -15,7 +15,7 @@ public class DoorScript : MonoBehaviour
 
     void Update()
     {
-        if (PickupChecker.totalCollected == 4)
+        if (PickupChecker.totalCollected == 4 && PickupChecker.isOn == true)
         {
             message.SetActive(true);
             anim.SetBool("allCollected", true);

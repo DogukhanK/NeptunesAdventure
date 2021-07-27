@@ -20,6 +20,7 @@ public class PickupChecker : MonoBehaviour
     public bool phase2 = false;
     public bool phase3 = false;
     public bool phase4 = false;
+    public static bool isOn = false;
 
     void Update()
     {
@@ -84,6 +85,7 @@ public class PickupChecker : MonoBehaviour
             tile4.GetComponent<Renderer>().material.color = Color.green;
             totalCollected = 4;
             phase4 = false;
+            isOn = true;
             StartCoroutine(count());
         }
     }
@@ -91,6 +93,6 @@ public class PickupChecker : MonoBehaviour
     IEnumerator count()
     {
         yield return new WaitForSeconds(1);
-        totalCollected = 5;
+        isOn = false;
     }
 }
