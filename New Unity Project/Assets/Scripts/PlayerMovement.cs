@@ -193,8 +193,8 @@ public class PlayerMovement : MonoBehaviour
     {
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity * doubleJump);
         jumpAudio.Play();
-        Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
-        jumpCooldown = true;
+        //Invoke("ResetJumpCooldown", 2.1f);   // add short delay which is slightly longer than the animation to prevent buttom spam
+        //jumpCooldown = true;
     }
 
     void Attack()

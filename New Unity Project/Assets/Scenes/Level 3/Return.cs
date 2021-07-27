@@ -8,15 +8,16 @@ public class Return : MonoBehaviour
     public static bool didWin = false;
     public GameObject player;
     public GameObject bridge;
+    public GameObject npc;
 
     void Start()
     {
         if (completed >= 1)
         {
-            player.transform.position = new Vector3(0, 0.29f, 45.41f);
             if (didWin)
             {
                 bridge.SetActive(true);
+                Destroy(npc);
             }
         }
     }

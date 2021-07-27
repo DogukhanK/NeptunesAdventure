@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6088940024219815454}
   - component: {fileID: 1020542587570839679}
   - component: {fileID: 3624177254651560940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 1741628254799274650, guid: 3b992ee762db5b244abb770e478f1ce5, type: 3}
       propertyPath: m_Name
       value: Top_4_complex
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741628254799274650, guid: 3b992ee762db5b244abb770e478f1ce5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8632184084940499071, guid: 3b992ee762db5b244abb770e478f1ce5, type: 3}
       propertyPath: m_RootOrder

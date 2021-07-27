@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3359028}
   - component: {fileID: 2369048}
   - component: {fileID: 6472062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WorkOctagon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
