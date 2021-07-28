@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2344118}
   - component: {fileID: 6429052}
   - component: {fileID: 11453584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpinningStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

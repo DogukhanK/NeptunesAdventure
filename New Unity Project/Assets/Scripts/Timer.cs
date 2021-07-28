@@ -11,6 +11,11 @@ public class Timer : MonoBehaviour
     public static int seconds = 0;
     public bool isIncreasing = false;
 
+    void Start()
+    {
+        seconds = 0;
+    }
+
     void Update()
     {
         if (isIncreasing == false)
