@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private int damage = 0;
 
     public Transform target;
+    public Transform target2;
     
 
     Animator anim;
@@ -29,7 +30,15 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        playerDist = Vector3.Distance(target.transform.position, transform.position);
+        if (CharacterSelection.index == 0)
+        {
+            playerDist = Vector3.Distance(target.transform.position, transform.position);
+        }
+
+        if (CharacterSelection.index == 1)
+        {
+            playerDist = Vector3.Distance(target2.transform.position, transform.position);
+        }
 
         anim.SetFloat("playerDist", playerDist);
 
@@ -50,11 +59,13 @@ public class Enemy : MonoBehaviour
         if (state.IsName("attack"))
         {
             nav.SetDestination(target.position);
+            nav.SetDestination(target2.position);
         }
 
         if (state.IsName("chase"))
         {
             nav.SetDestination(target.position);
+            nav.SetDestination(target2.position);
         }
 
         if (anim.IsInTransition(0) && anim.GetNextAnimatorStateInfo(0).IsName("chase"))
@@ -62,6 +73,7 @@ public class Enemy : MonoBehaviour
             nav.isStopped = false;
             nav.speed = chaseSpeed;
             nav.SetDestination(target.position);
+            nav.SetDestination(target2.position);
         }
 
         if (anim.IsInTransition(0) && anim.GetNextAnimatorStateInfo(0).IsName("idle"))

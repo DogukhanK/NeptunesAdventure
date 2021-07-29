@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Finish : MonoBehaviour
+public class Finish2 : MonoBehaviour
 {
     public GameObject music;
     public GameObject levelTimer;
@@ -44,7 +44,7 @@ public class Finish : MonoBehaviour
         totalScore.GetComponent<Text>().text = "Total Score: " + finalScore;
         totalScore2.GetComponent<Text>().text = "Total Score: " + finalScore;
 
-        PlayerPrefs.SetInt("LevelScore", finalScore);
+        PlayerPrefs.SetInt("LevelScore2", finalScore);
 
         music.SetActive(false);
         levelTimer.SetActive(false);

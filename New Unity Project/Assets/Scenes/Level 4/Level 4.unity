@@ -1124,7 +1124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseSpeed: 6
   playerDist: 0
-  target: {fileID: 1017819547}
+  target: {fileID: 210487002}
+  target2: {fileID: 1017819547}
 --- !u!195 &77699199
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3962,8 +3963,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335315335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3352094, y: 15.105896, z: 44}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalPosition: {x: -45.42, y: 15.11, z: 80.89}
+  m_LocalScale: {x: 135.04457, y: 0.99999994, z: 173.78036}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -9456,7 +9457,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 738483428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59f95514986c0046b87b1a87a691323, type: 3}
+  m_Script: {fileID: 11500000, guid: 2db480a1fd88a054f964de94567cda56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 803218048}
@@ -24213,7 +24214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956287621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 25.85, z: 4.6499996}
+  m_LocalPosition: {x: -27, y: 41.85, z: 106.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 210487002}

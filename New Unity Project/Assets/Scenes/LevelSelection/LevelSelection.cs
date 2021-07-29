@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
     public static int currentLevelCode;
-    public static int isCompleted = 0;
+    public static int isCompleted = 3;
     public static int thisLevel;
 
     public GameObject Level2Button;
@@ -15,10 +16,33 @@ public class LevelSelection : MonoBehaviour
 
     public AudioSource click;
 
+    public int bestScore;
+    public int bestScore2;
+    public int bestScore3;
+    public int bestScore4;
+
+    public GameObject bestscoreDisplay;
+    public GameObject bestscoreDisplay2;
+    public GameObject bestscoreDisplay3;
+    public GameObject bestscoreDisplay4;
+
     void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        bestScore = PlayerPrefs.GetInt("LevelScore");
+        bestscoreDisplay.GetComponent<Text>().text = "Best Score = " + bestScore;
+
+        bestScore2 = PlayerPrefs.GetInt("LevelScore2");
+        bestscoreDisplay2.GetComponent<Text>().text = "Best Score = " + bestScore2;
+
+        bestScore3 = PlayerPrefs.GetInt("LevelScore3");
+        bestscoreDisplay3.GetComponent<Text>().text = "Best Score = " + bestScore3;
+
+        bestScore4 = PlayerPrefs.GetInt("LevelScore4");
+        bestscoreDisplay4.GetComponent<Text>().text = "Best Score = " + bestScore4;
+
 
         if (isCompleted == 0)
         {
@@ -72,6 +96,46 @@ public class LevelSelection : MonoBehaviour
         StartCoroutine(Level4Delay());
         currentLevelCode = 8;
         thisLevel = 4;
+    }
+
+    public void ResetScores()
+    {
+        click.Play();
+        PlayerPrefs.SetInt("LevelScore", 0);
+        bestscoreDisplay.GetComponent<Text>().text = "Best Score = " + bestScore;
+        PlayerPrefs.SetInt("LevelScore2", 0);
+        bestscoreDisplay2.GetComponent<Text>().text = "Best Score = " + bestScore2;
+        PlayerPrefs.SetInt("LevelScore3", 0);
+        bestscoreDisplay3.GetComponent<Text>().text = "Best Score = " + bestScore3;
+        PlayerPrefs.SetInt("LevelScore4", 0);
+        bestscoreDisplay4.GetComponent<Text>().text = "Best Score = " + bestScore4;
+
+        if (isCompleted == 0)
+        {
+            SceneManager.LoadScene(1);
+            Level2Button.SetActive(false);
+            Level3Button.SetActive(false);
+            Level4Button.SetActive(false);
+        }
+
+        if (isCompleted == 1)
+        {
+            SceneManager.LoadScene(1);
+            Level3Button.SetActive(false);
+            Level4Button.SetActive(false);
+        }
+        if (isCompleted == 2)
+        {
+            SceneManager.LoadScene(1);
+            Level4Button.SetActive(false);
+        }
+        if (isCompleted >= 3)
+        {
+            SceneManager.LoadScene(1);
+            Level2Button.SetActive(true);
+            Level3Button.SetActive(true);
+            Level4Button.SetActive(true);
+        }
     }
 
     IEnumerator Level1Delay()
